@@ -25,5 +25,20 @@ module PocShotstack
     end
     map %w[--toc] => :toc
 
+    #
+    # config
+    #
+    desc 'config SUBCOMMAND', 'Config - This is the main entry point to Config subcommands'
+    method_option :help, aliases: '-h',
+                         type: :boolean,
+                         desc: 'Display usage information'
+    def config(subcommand = :gui)
+      if options[:help]
+        invoke :help, ['config']
+      else
+        require_relative 'commands/config'
+        PocShotstack::Commands::Config.new(subcommand, options).execute
+      end
+    end
   end
 end
