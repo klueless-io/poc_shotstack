@@ -19,6 +19,19 @@ module PocShotstack
       #
       # sample: output.puts 'OK'
       def execute(input: $stdin, output: $stdout)
+        loop do
+          case @command
+          when :config
+            require_relative 'config'
+            cmd = PocShotstack::Commands::Config.new('gui', {})
+            @command = cmd&.execute(input: input, output: output)
+          when :exit
+            break
+          else
+            @command = gui
+          end
+          
+        end
       end
 
       private
@@ -27,6 +40,7 @@ module PocShotstack
         prompt = TTY::Prompt.new
 
         choices = [
+          { value: 'config', name: 'Config' }
         ]
 
         begin
