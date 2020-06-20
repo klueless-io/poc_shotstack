@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd /Users/davidcruwys/dev/cmdlets/poc_shotstack
+bundle exec exe/poc_shotstack toc
