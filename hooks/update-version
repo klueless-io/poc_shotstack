@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# NOTE: you may need change file permissions
+#       chmod +x hooks/update-version
+
+exit 1 if ARGV.empty?
+
+version = ARGV[0]
+version = version[1..-1] # revove 'v' character, e.g. v0.1.1 becomes 0.1.1
+
+output = <<~RUBY
+  # frozen_string_literal: true
+
+  module PocShotstack
+    VERSION = '#{version}'
+  end
+RUBY
+
+printf "%-25<label>s : %<version>s\n", label: 'GEM VERSION', version: version
+File.open('lib/poc_shotstack/version.rb', 'w+') { |f| f.write(output) }
