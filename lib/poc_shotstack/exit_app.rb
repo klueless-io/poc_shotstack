@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module PocShotstack
-  VERSION = '0.0.3'
+  class ExitApp < StandardError; end
 end

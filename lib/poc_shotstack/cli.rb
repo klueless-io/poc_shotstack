@@ -17,5 +17,13 @@ module PocShotstack
       puts 'v' + PocShotstack::VERSION
     end
     map %w[--version -v] => :version
+
+    desc 'toc', 'Table of contents'
+    def toc
+      require_relative 'commands/toc'
+      PocShotstack::Commands::Toc.new({}).execute
+    end
+    map %w[--toc] => :toc
+
   end
 end
