@@ -1,8 +1,12 @@
-# PocShotstack
+# Poc Shotstack
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/poc_shotstack`. To experiment with that code, run `bin/console` for an interactive prompt.
+> POC ShotStack for generating videos using the ShotStack API
 
-TODO: Delete this and the text above, and describe your gem
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/poc_shotstack`.
+
+When using the source code for this gem, start by running `bin/setup` to install locally or `bundle install`
+
+To experiment with that code, run `bin/console` for an interactive prompt or run `exe/poc_shotstack` to see a list of commands.
 
 ## Installation
 
@@ -14,11 +18,29 @@ gem 'poc_shotstack'
 
 And then execute:
 
-    $ bundle install
+```bash
+bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install poc_shotstack
+```bash
+gem install poc_shotstack
+```
+
+## Stories
+
+
+As a XX, I should be able to , so that I
+
+- Create new commandline tool
+- Setup deployment pipeline
+- Setup guard and unit tests
+
+
+As a XX, I should be able to , so that I
+
+
 
 ## Usage
 
@@ -32,8 +54,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/poc_shotstack. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/poc_shotstack/blob/master/CODE_OF_CONDUCT.md).
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/poc_shotstack. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -41,4 +62,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the PocShotstack project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/poc_shotstack/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the PocShotstack project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/poc_shotstack/blob/master/CODE_OF_CONDUCT.md).
+
+## Copyright
+
+Copyright (c) David. See [MIT License](LICENSE.txt) for further details.
