@@ -30,6 +30,9 @@ module PocShotstack
           when :view
             require_relative 'config_view'
             subcmd = PocShotstack::Commands::ConfigView.new({})
+          when :raw
+            require_relative 'config_raw'
+            subcmd = PocShotstack::Commands::ConfigRaw.new({})
           else
             break
           end
@@ -44,7 +47,8 @@ module PocShotstack
 
         choices = [
           { value: 'settings', name: 'Settings' }, 
-          { value: 'view', name: 'View' }
+          { value: 'view', name: 'View' }, 
+          { value: 'raw', name: 'Raw' }
         ]
 
         begin
