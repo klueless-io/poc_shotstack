@@ -1,0 +1,45 @@
+AllCops:
+  DisplayCopNames: true
+  ExtraDetails: true
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/spec/*"
+  ExcludedMethods:
+    - configure
+    - context
+    - define
+    - describe
+    - draw
+    - factory
+    - feature
+    - guard
+    - included
+    - it
+    - let
+    - let!
+    - scenario
+    - setup
+    - shared_context
+    - shared_examples
+    - shared_examples_for
+    - transaction
+
+Metrics/MethodLength:
+  Max: 25
+
+Layout/LineLength:
+  Max: 200
+  # Ignores annotate output
+  IgnoredPatterns: ['\A# \*\*']
+  IgnoreCopDirectives: true
+
+Lint/UnusedMethodArgument:
+  AllowUnusedKeywordArguments: true
+
+Style/BlockComments:
+  Enabled: false
+  Include:
+    - "**/spec/*"
+
+inherit_from: .rubocop_todo.yml
