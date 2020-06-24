@@ -36,6 +36,7 @@ Gem::Specification.new do |spec|
   spec.extensions    = ['ext/poc_shotstack/extconf.rb']
 
   spec.add_dependency 'shotstack'
+  spec.add_dependency 'activesupport'
 
   # spec.add_dependency 'tty-box',         '~> 0.5.0'
   # spec.add_dependency 'tty-color',       '~> 0.5'

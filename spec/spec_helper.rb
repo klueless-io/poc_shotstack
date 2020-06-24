@@ -3,6 +3,7 @@
 require 'pry'
 require 'bundler/setup'
 require 'poc_shotstack'
+require 'poc_shotstack/builder/shotstack_builder.rb'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

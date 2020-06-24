@@ -4,6 +4,8 @@ require_relative 'app'
 require 'forwardable'
 require 'pastel'
 
+require 'shotstack'
+
 module PocShotstack
   # Base command class
   class Command
@@ -18,6 +20,38 @@ module PocShotstack
       @options = options
       @pastel = Pastel.new
       config
+    end
+
+    # ----------------------------------------------------------------------
+    # Shotstack Specific helpers
+    # ----------------------------------------------------------------------
+
+    def shotstack_configure
+      Shotstack.configure do |config|
+        config.api_key['x-api-key'] = get(:staging_api_key)
+        config.host = 'api.shotstack.io'
+        config.base_path = 'stage'
+      end
+    end
+
+    def shotstack_api
+      @api_client ||= Shotstack::EndpointsApi.new
+    end
+
+    def shotstack_post_render(edit)
+      shotstack_configure
+
+      begin
+        response = shotstack_api.post_render(edit).response
+      rescue => error
+        abort("Request failed: #{error.message}")
+      end
+
+      puts response.message
+      puts ">> Now check the progress of your render by running:"
+      puts ">> ruby examples/status.rb #{response.id}"
+
+      response.id
     end
 
     # ----------------------------------------------------------------------

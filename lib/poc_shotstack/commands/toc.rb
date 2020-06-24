@@ -25,6 +25,10 @@ module PocShotstack
             require_relative 'config'
             cmd = PocShotstack::Commands::Config.new('gui', {})
             @command = cmd&.execute(input: input, output: output)
+          when :demo
+            require_relative 'demo'
+            cmd = PocShotstack::Commands::Demo.new('gui', {})
+            @command = cmd&.execute(input: input, output: output)
           when :exit
             break
           else
@@ -40,7 +44,8 @@ module PocShotstack
         prompt = TTY::Prompt.new
 
         choices = [
-          { value: 'config', name: 'Config' }
+          { value: 'config', name: 'Config' }, 
+          { value: 'demo', name: 'Demo' }
         ]
 
         begin

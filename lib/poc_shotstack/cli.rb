@@ -40,5 +40,21 @@ module PocShotstack
         PocShotstack::Commands::Config.new(subcommand, options).execute
       end
     end
+    
+    #
+    # demo
+    #
+    desc 'demo SUBCOMMAND', 'Demo - These sub commands implement the demos from the shotstack SDK demos'
+    method_option :help, aliases: '-h',
+                         type: :boolean,
+                         desc: 'Display usage information'
+    def demo(subcommand = :gui)
+      if options[:help]
+        invoke :help, ['demo']
+      else
+        require_relative 'commands/demo'
+        PocShotstack::Commands::Demo.new(subcommand, options).execute
+      end
+    end
   end
 end
